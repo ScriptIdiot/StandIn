@@ -23,6 +23,7 @@ The following items are currently on the radar for implementation in subsequent 
 - Adding optional JSON/XML output for some functions to help with scripting.
 - Code needs a re-factor, better modularized functions and split out into different classes.
 
+# Subject References
 
 - An ACE up the sleeve (by [@_wald0](https://twitter.com/_wald0) & [@harmj0y](https://twitter.com/harmj0y)) - [here](https://www.blackhat.com/docs/us-17/wednesday/us-17-Robbins-An-ACE-Up-The-Sleeve-Designing-Active-Directory-DACL-Backdoors-wp.pdf)
 - Kerberoasting (by [@_xpn_](https://twitter.com/_xpn_)) - [here](https://blog.xpnsec.com/kerberos-attacks-part-1/)
@@ -89,7 +90,7 @@ The following items are currently on the radar for implementation in subsequent 
 ```
   __
  ( _/_   _//   ~b33f
-__)/(//)(/(/)  v1.3
+__)/(//)(/(/)  v1.4
 
 
  >--~~--> Args? <--~~--<
@@ -133,6 +134,7 @@ __)/(//)(/(/)  v1.3
 --delegation    Boolean, list accounts with unconstrained / constrained delegation
 --asrep         Boolean, list ASREP roastable accounts
 --dc            Boolean, list all domain controllers
+--trust         Boolean, list all trust relationships
 --adcs          List all CA's and all published templates
 --clientauth    Boolean, modify ADCS template to add/remove "Client Authentication"
 --ess           Boolean, modify ADCS template to add/remove "ENROLLEE_SUPPLIES_SUBJECT"
@@ -240,6 +242,9 @@ StandIn.exe --delegation --domain redhook --user RFludd --pass Cl4vi$Alchemi4e
 
 # Get a list of all domain controllers
 StandIn.exe --dc
+
+# Get a list of all trust relationships in the current domain
+StandIn.exe --trust
 
 # List members of group or list user group membership
 StandIn.exe --group Literarum
